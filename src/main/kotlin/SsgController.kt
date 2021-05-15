@@ -37,7 +37,7 @@ class SsgController {
 
             if(article.boardId == board.id){
 
-                val writer = memberRepository.getMemberById(article.id)!!
+                val writer = memberRepository.getMemberById(article.memberId)!!
                 val writerName = writer.nickname
 
                 // ArticleDetail page마다 URI를 지정해주고, 파일을 생성해주는 작업
@@ -63,7 +63,7 @@ class SsgController {
 
         val fileName = "article_list_${board.code}.html"
         writeStrInFile("ext/${fileName}", fileContent)
-        println("fileName + 파일이 생성되었습니다.")
+        println("${fileName} + 파일이 생성되었습니다.")
 
 
     }
@@ -97,6 +97,7 @@ class SsgController {
         fileContent += "<div>제목: ${article.title}</div>\n"
         fileContent += "<div>내용: ${article.body}</div>\n"
         fileContent += "<div><a href=\"#\" onclick=\"history.back();\"></a></div>\n"
+        // href="#" 이 구현 돼야 뒤로가기가 생길듯
 
         val fileName ="article_detail_${article.id}.html"
         writeStrInFile("ext/${fileName}", fileContent)
