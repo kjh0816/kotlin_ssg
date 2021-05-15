@@ -1,18 +1,19 @@
+val articleRepository = ArticleRepository()
+val boardRepository = BoardRepository()
+val memberRepository = MemberRepository()
 
-    val articleRepository = ArticleRepository()
-    val boardRepository = BoardRepository()
-    val memberRepository = MemberRepository()
-
-    var loginedMember: Member? = null
+var loginedMember: Member? = null
 
 
-fun main(){
+fun main() {
 
-    val systemController  = SystemController()
+    val systemController = SystemController()
     val articleController = ArticleController()
     val boardController = BoardController()
     val memberController = MemberController()
     val ssgController = SsgController()
+
+
 
 
 
@@ -83,9 +84,6 @@ fun main(){
             }
             "/article/list" -> {
                 articleController.list(req)
-            }
-            "/ssg/build" -> {
-
             }
             else -> {
                 println("${command}는(은) 존재하지 않는 명령어입니다.")
