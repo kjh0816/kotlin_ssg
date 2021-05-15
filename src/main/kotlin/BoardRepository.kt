@@ -42,7 +42,7 @@ class BoardRepository {
 
 
     @JvmName("getBoards1")
-    private fun getBoards(): List<Board>{
+    fun getBoards(): List<Board>{
 
         val boards = mutableListOf<Board>()
         val memberLastId = getBoardLastId()

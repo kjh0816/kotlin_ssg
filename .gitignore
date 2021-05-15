@@ -67,4 +67,6 @@ distTmp/
 outTmp/
 /test.output
 /kotlin-native/dist
-/data
+ext/
+data/
+test/

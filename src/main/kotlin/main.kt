@@ -12,6 +12,7 @@ fun main(){
     val articleController = ArticleController()
     val boardController = BoardController()
     val memberController = MemberController()
+    val ssgController = SsgController()
 
 
 
@@ -35,6 +36,10 @@ fun main(){
 
 
         when(req.actionPath){
+
+            "/ssg/build" -> {
+                ssgController.build(req)
+            }
 
             "/system/exit" -> {
                 systemController.exit(req)
